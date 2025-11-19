@@ -3,6 +3,8 @@ package com.qmdeve.authenticator.ui.activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.ViewGroup;
 
@@ -68,6 +70,21 @@ public class HomeActivity extends BaseActivity {
         fabParams.bottomMargin = navigationBarHeight + Utils.dp2px(this, 24);
         fabParams.rightMargin = Utils.dp2px(this, 24);
         fab.setLayoutParams(fabParams);
+
+        toolbar.setOnMenuItemClickListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.menu_github) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Rouneant/Qm-Authenticator-for-Android")));
+                return true;
+            } else if (id == R.id.menu_telegram) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/QmDeves")));
+                return true;
+            } else if (id == R.id.menu_qq) {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://qm.qq.com/q/OEVn8ZslMq")));
+                return true;
+            }
+            return false;
+        });
     }
 
     private void setRecyclerView() {
@@ -98,7 +115,7 @@ public class HomeActivity extends BaseActivity {
 
     private void showAddTokenDialog() {
         AddTokenDialog dialog = new AddTokenDialog();
-        dialog.setOnTokenAddedListener(token -> addTokenToDatabase(token));
+        dialog.setOnTokenAddedListener(this::addTokenToDatabase);
         dialog.show(getSupportFragmentManager(), "AddTokenDialog");
     }
 

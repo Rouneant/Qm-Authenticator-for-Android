@@ -26,4 +26,6 @@
     <string name="add_verify_token">Add Verification Token</string>
     <string name="enter_account_name">Please enter account name</string>
     <string name="enter_secret_key">Please enter secret key</string>
+    <string name="telegram_group">Telegram Group</string>
+    <string name="qq_group">QQ Group</string>
 </resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_github"
+        android:icon="@drawable/ic_github"
+        android:title="GitHub"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_telegram"
+        android:title="@string/telegram_group"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_qq"
+        android:title="@string/qq_group"
+        app:showAsAction="never" />
+</menu>
