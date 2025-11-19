@@ -1,14 +1,18 @@
-# Qm Authentication for Android
+<div align="center">
+<img src="img/icon.png" width="250" alt="icon">
+
+## Qm Authentication for Android
+**一个为 Android 开发的、开源、安全、离线的两步验证（2FA）应用。它帮助你为你的在线账户增加一层额外的安全保护**
 
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-[![QQ Group](https://img.shields.io/badge/QQ%20Group-1046829337-blue.svg?logo=qq)](https://qm.qq.com/q/OEVn8ZslMq)
 [![Telegram](https://img.shields.io/badge/Telegram%20Group-QmDeves-blue.svg?logo=telegram)](https://t.me/QmDeves)
-
-**一个为 Android 开发的、开源、安全、离线的两步验证（2FA）应用。它帮助你为你的在线账户增加一层额外的安全保护**
+[![QQ Group](https://img.shields.io/badge/QQ%20Group-1046829337-blue.svg?logo=qq)](https://qm.qq.com/q/OEVn8ZslMq)
 
 **[English](./README.md) | 简体中文**
+
+</div>
 
 ---
 

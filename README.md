@@ -1,4 +1,8 @@
-# Qm Authentication for Android
+<div align="center">
+<img src="img/icon.png" width="250" alt="icon">
+
+## Qm Authentication for Android
+**An open-source, secure, offline two-factor authentication (2FA) application developed for Android. It helps you add an extra layer of security to your online account**
 
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -6,10 +10,9 @@
 [![Telegram](https://img.shields.io/badge/Telegram%20Group-QmDeves-blue.svg?logo=telegram)](https://t.me/QmDeves)
 [![QQ Group](https://img.shields.io/badge/QQ%20Group-1046829337-blue.svg?logo=qq)](https://qm.qq.com/q/OEVn8ZslMq)
 
-**An open-source, secure, offline two-factor authentication (2FA) application developed for Android. It helps you add an extra layer of security to your online account**
-
-
 **English | [简体中文](./README_zh.md)**
+
+</div>
 
 ---
 
@@ -24,9 +27,9 @@
 
 ### Screenshot
 
-| Add Account | Verification code list |
-|:---:|:---:|
-| <img src="screenshots/screenshot1.jpg" width="200"> | <img src="screenshots/screenshot2.jpg" width="200"> |
+|                 Add Account                 |           Verification code list            |
+|:-------------------------------------------:|:-------------------------------------------:|
+| <img src="img/screenshot1.jpg" width="200"> | <img src="img/screenshot2.jpg" width="200"> |
 
 ---
 
