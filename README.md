@@ -1,7 +1,7 @@
 <div align="center">
-<img src="img/icon.png" width="160" alt="icon">
+<img src="img/icon.png" width="150" alt="icon">
 
-## Qm Authentication for Android
+## Qm Authenticator for Android
 **An open-source, secure, offline two-factor authentication (2FA) application developed for Android. It helps you add an extra layer of security to your online account**
 
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
@@ -27,7 +27,7 @@
 
 ### Screenshot
 
-|                 Add Account                 |           Verification code list            |
+|                  Add Token                  |           Verification code list            |
 |:-------------------------------------------:|:-------------------------------------------:|
 | <img src="img/screenshot1.jpg" width="200"> | <img src="img/screenshot2.jpg" width="200"> |
 

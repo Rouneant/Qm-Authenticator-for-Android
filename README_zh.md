@@ -1,7 +1,7 @@
 <div align="center">
-<img src="img/icon.png" width="160" alt="icon">
+<img src="img/icon.png" width="150" alt="icon">
 
-## Qm Authentication for Android
+## Qm Authenticator for Android
 **一个为 Android 开发的、开源、安全、离线的两步验证（2FA）应用。它帮助你为你的在线账户增加一层额外的安全保护**
 
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
@@ -27,8 +27,8 @@
 
 ### 截图
 
-| 添加账户 | 验证码列表 |
-|:---:|:---:|
+|                        添加临牌                         | 验证码列表 |
+|:---------------------------------------------------:|:---:|
 | <img src="screenshots/screenshot1.jpg" width="200"> | <img src="screenshots/screenshot2.jpg" width="200"> |
 
 ---
