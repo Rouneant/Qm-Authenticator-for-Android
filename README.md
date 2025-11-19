@@ -12,7 +12,7 @@
 - **安全第一**：所有密钥**完全离线**存储在设备本地，绝不会上传到任何服务器。
 - **开源透明**：完整的源代码开放，安全性和隐私性可供任何人审查。
 - **标准兼容**：支持基于时间的一次性密码算法（TOTP），与所有使用此标准（如 Google, GitHub, Microsoft 等）的服务兼容。
-- **简洁易用**：**Material Design 3**设计风格，提供直观、流畅的用户体验。
+- **简洁易用**：**Material Design 3** 设计风格，提供直观、流畅的用户体验。
 
 ---
 
@@ -27,4 +27,4 @@
 ## 下载与安装
 
 ### 从 GitHub Releases 下载
-前往 [Releases](https://github.com/Rouneant/Qm-Authenticator-for-Android/releases) 页面，下载最新的 `app-release.apk` 文件。
+前往 [Releases](https://github.com/Rouneant/Qm-Authenticator-for-Android/releases) 页面下载最新的 `app-release.apk` 文件。
