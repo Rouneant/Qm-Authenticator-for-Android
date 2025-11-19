@@ -1,5 +1,5 @@
 <div align="center">
-<img src="img/icon.png" width="250" alt="icon">
+<img src="img/icon.png" width="200" alt="icon">
 
 ## Qm Authentication for Android
 **An open-source, secure, offline two-factor authentication (2FA) application developed for Android. It helps you add an extra layer of security to your online account**

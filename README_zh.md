@@ -1,5 +1,5 @@
 <div align="center">
-<img src="img/icon.png" width="250" alt="icon">
+<img src="img/icon.png" width="200" alt="icon">
 
 ## Qm Authentication for Android
 **一个为 Android 开发的、开源、安全、离线的两步验证（2FA）应用。它帮助你为你的在线账户增加一层额外的安全保护**
