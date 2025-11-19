@@ -3,13 +3,19 @@
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-An open-source, secure, offline two-factor authentication (2FA) application developed for Android. It helps you add an extra layer of security to your online account
+<br>
 
-English | [简体中文](./README_zh.md)
+[![Telegram](https://img.shields.io/badge/Telegram%20Group-QmDeves-blue.svg?logo=telegram)](https://t.me/QmDeves)
+[![QQ Group](https://img.shields.io/badge/QQ%20Group-1046829337-blue.svg?logo=qq)](https://qm.qq.com/q/OEVn8ZslMq)
+
+**An open-source, secure, offline two-factor authentication (2FA) application developed for Android. It helps you add an extra layer of security to your online account**
+
+
+**English | [简体中文](./README_zh.md)**
 
 ---
 
-## Characteristic
+### Characteristic
 
 - **Safety First**：All keys are **completely offline** stored locally on the device and will never be uploaded to any server
 - **Open source**：The complete source code is open, and security and privacy are available for anyone to review
@@ -18,7 +24,7 @@ English | [简体中文](./README_zh.md)
 
 ---
 
-## Screenshot
+### Screenshot
 
 | Add Account | Verification code list |
 |:---:|:---:|
@@ -26,7 +32,6 @@ English | [简体中文](./README_zh.md)
 
 ---
 
-## Download and installation
-
-### Download from GitHub Releases
+### Download and installation
+#### Download from GitHub Releases
 Go to the [Releases](https://github.com/Rouneant/Qm-Authenticator-for-Android/releases) page to download the latest `app-release.apk` file
