@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00000000</color>
+    <color name="material_red_500">#A92921</color>
+    <color name="material_on_surface_variant">#625B71</color>
+    <color name="material_outline">#79747E</color>
+    <color name="material_on_surface_emphasis_medium">#1F1B24</color>
 </resources>

@@ -11,7 +11,7 @@ android {
         minSdk { version = release(23) }
         targetSdk { version = release(36) }
         versionCode 1
-        versionName "1.0.0-Beta1"
+        versionName "1.0.0-Beta01"
     }
 
     buildTypes {
@@ -34,4 +34,6 @@ dependencies {
     implementation libs.androidx.constraintlayout
     implementation libs.commons.codec
     implementation libs.androidx.security.crypto
+    implementation libs.androidx.room.runtime
+    annotationProcessor libs.androidx.room.compiler
 }

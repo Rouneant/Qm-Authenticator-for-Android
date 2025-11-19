@@ -59,9 +59,4 @@ public class Utils {
                 context.getResources().getDisplayMetrics()
         );
     }
-
-    public static float px2dp(Context context, int px) {
-        float density = context.getResources().getDisplayMetrics().density;
-        return px / density;
-    }
 }

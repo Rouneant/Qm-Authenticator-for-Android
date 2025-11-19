@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Qm Authenticator</string>
+    <string name="app_name" translatable="false">Qm Authenticator</string>
+    <string name="issuer_hint">Issuer（Optional）</string>
+    <string name="issuer">Issuer</string>
+    <string name="account_hint">Account Name</string>
+    <string name="secret_hint">Secret</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="type">Type</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="not_set">Not set</string>
 </resources>

@@ -5,12 +5,15 @@ appcompat = "1.7.1"
 commonsCodec = "1.20.0"
 constraintlayout = "2.2.1"
 material = "1.14.0-alpha06"
+roomRuntime = "2.8.3"
 securityCrypto = "1.1.0"
 
 [libraries]
 androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
 commons-codec = { module = "commons-codec:commons-codec", version.ref = "commonsCodec" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
