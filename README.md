@@ -3,28 +3,30 @@
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://www.android.com/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-一个为 Android 开发的、开源、安全、离线的两步验证（2FA）应用。它帮助你为你的在线账户增加一层额外的安全保护。
+An open-source, secure, offline two-factor authentication (2FA) application developed for Android. It helps you add an extra layer of security to your online account
+
+English | [简体中文](./README_zh.md)
 
 ---
 
-## 特性
+## Characteristic
 
-- **安全第一**：所有密钥**完全离线**存储在设备本地，绝不会上传到任何服务器。
-- **开源透明**：完整的源代码开放，安全性和隐私性可供任何人审查。
-- **标准兼容**：支持基于时间的一次性密码算法（TOTP），与所有使用此标准（如 Google, GitHub, Microsoft 等）的服务兼容。
-- **简洁易用**：**Material Design 3** 设计风格，提供直观、流畅的用户体验。
+- **Safety First**：All keys are **completely offline** stored locally on the device and will never be uploaded to any server
+- **Open source**：The complete source code is open, and security and privacy are available for anyone to review
+- **Standard compatibility**：Supports Time-Based One-Time Password Algorithm (TOTP), compatible with all services using this standard (e.g., Google, GitHub, Microsoft, etc.)
+- **Simple and easy to use**：**Material Design 3** is a design style that provides an intuitive and smooth user experience
 
 ---
 
-## 截图
+## Screenshot
 
-| 添加账户 | 验证码列表 |
+| Add Account | Verification code list |
 |:---:|:---:|
 | <img src="screenshots/screenshot1.jpg" width="200"> | <img src="screenshots/screenshot2.jpg" width="200"> |
 
 ---
 
-## 下载与安装
+## Download and installation
 
-### 从 GitHub Releases 下载
-前往 [Releases](https://github.com/Rouneant/Qm-Authenticator-for-Android/releases) 页面下载最新的 `app-release.apk` 文件。
+### Download from GitHub Releases
+Go to the [Releases](https://github.com/Rouneant/Qm-Authenticator-for-Android/releases) page to download the latest `app-release.apk` file
