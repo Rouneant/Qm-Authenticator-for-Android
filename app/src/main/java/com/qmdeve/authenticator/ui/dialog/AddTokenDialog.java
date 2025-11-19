@@ -15,12 +15,13 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.qmdeve.authenticator.R;
 import com.qmdeve.authenticator.model.Token;
 
+import java.util.Objects;
+
 public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
 
     private TextInputEditText issuerEditText;
     private TextInputEditText accountEditText;
     private TextInputEditText secretEditText;
-    private TextInputLayout issuerInputLayout;
     private TextInputLayout accountInputLayout;
     private TextInputLayout secretInputLayout;
     private MaterialButton cancelButton;
@@ -40,7 +41,7 @@ public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireContext());
-        builder.setTitle("添加验证令牌");
+        builder.setTitle(getString(R.string.add_verify_token));
         builder.setView(createDialogView());
         return builder.create();
     }
@@ -56,7 +57,6 @@ public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
     }
 
     private void initView(View view) {
-        issuerInputLayout = view.findViewById(R.id.issuer_input_layout);
         accountInputLayout = view.findViewById(R.id.account_input_layout);
         secretInputLayout = view.findViewById(R.id.secret_input_layout);
         issuerEditText = view.findViewById(R.id.issuer_edit_text);
@@ -80,14 +80,14 @@ public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
         boolean isValid = true;
 
         if (TextUtils.isEmpty(accountEditText.getText())) {
-            accountInputLayout.setError("请输入账户名");
+            accountInputLayout.setError(getString(R.string.enter_account_name));
             isValid = false;
         } else {
             accountInputLayout.setError(null);
         }
 
         if (TextUtils.isEmpty(secretEditText.getText())) {
-            secretInputLayout.setError("请输入密钥");
+            secretInputLayout.setError(getString(R.string.enter_secret_key));
             isValid = false;
         } else {
             secretInputLayout.setError(null);
@@ -121,7 +121,7 @@ public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
         if (dialog != null) {
             int width = ViewGroup.LayoutParams.MATCH_PARENT;
             int height = ViewGroup.LayoutParams.WRAP_CONTENT;
-            dialog.getWindow().setLayout(width, height);
+            Objects.requireNonNull(dialog.getWindow()).setLayout(width, height);
         }
     }
 }

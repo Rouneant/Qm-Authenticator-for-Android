@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="issuer_hint">Эмитент (опционально)</string>
+    <string name="issuer">Эмитент</string>
+    <string name="account_hint">Имя учетной записи</string>
+    <string name="secret_hint">Секретный ключ</string>
+    <string name="cancel">Отмена</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="type">Тип</string>
+    <string name="verification_code">Код проверки</string>
+    <string name="not_set">Не задано</string>
+    <string name="successfully">Ключ успешно добавлен</string>
+    <string name="copy_successfully">Код проверки скопирован в буфер обмена</string>
+    <string name="copy_verification_code">Копировать код проверки</string>
+    <string name="view_details">Просмотреть детали</string>
+    <string name="delete_token">Удалить токен</string>
+    <string name="token_details">Детали токена</string>
+    <string name="copy_key">Копировать ключ</string>
+    <string name="key">Ключ</string>
+    <string name="copy_key_successfully">Ключ скопирован в буфер обмена</string>
+    <string name="delete_token_title">Удалить токен</string>
+    <string name="delete_token_message">Удалить %1$s? Это действие необратимо.</string>
+    <string name="delete">Удалить</string>
+    <string name="no_tokens_message">Токены отсутствуют. Нажмите кнопку в правом нижнем углу, чтобы добавить.</string>
+    <string name="token_deleted">Токен удален</string>
+    <string name="add_verify_token">Добавить токен проверки</string>
+    <string name="enter_account_name">Введите имя учетной записи</string>
+    <string name="enter_secret_key">Введите секретный ключ</string>
+</resources>

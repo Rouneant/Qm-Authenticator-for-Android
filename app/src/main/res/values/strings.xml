@@ -9,4 +9,21 @@
     <string name="type">Type</string>
     <string name="verification_code">Verification Code</string>
     <string name="not_set">Not set</string>
+    <string name="successfully">Key added successfully</string>
+    <string name="copy_successfully">The verification code has been copied to the clipboard</string>
+    <string name="copy_verification_code">Copy the verification code</string>
+    <string name="view_details">View details</string>
+    <string name="delete_token">Delete Token</string>
+    <string name="token_details">Token details</string>
+    <string name="copy_key">Copy key</string>
+    <string name="key">Key</string>
+    <string name="copy_key_successfully">The key has been copied to the clipboard</string>
+    <string name="delete_token_title">Delete Token</string>
+    <string name="delete_token_message">Are you sure you want to delete %1$s? This action cannot be undone.</string>
+    <string name="delete">Delete</string>
+    <string name="no_tokens_message">No tokens yet, tap the button in the bottom right corner to add</string>
+    <string name="token_deleted">Token deleted</string>
+    <string name="add_verify_token">Add Verification Token</string>
+    <string name="enter_account_name">Please enter account name</string>
+    <string name="enter_secret_key">Please enter secret key</string>
 </resources>

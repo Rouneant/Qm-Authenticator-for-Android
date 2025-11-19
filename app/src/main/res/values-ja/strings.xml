@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="issuer_hint">発行者 (オプション)</string>
+    <string name="issuer">発行者</string>
+    <string name="account_hint">アカウント名</string>
+    <string name="secret_hint">秘密鍵</string>
+    <string name="cancel">キャンセル</string>
+    <string name="confirm">確認</string>
+    <string name="type">タイプ</string>
+    <string name="verification_code">確認コード</string>
+    <string name="not_set">未設定</string>
+    <string name="successfully">キーが正常に追加されました</string>
+    <string name="copy_successfully">確認コードがクリップボードにコピーされました</string>
+    <string name="copy_verification_code">確認コードをコピー</string>
+    <string name="view_details">詳細を表示</string>
+    <string name="delete_token">トークンを削除</string>
+    <string name="token_details">トークンの詳細</string>
+    <string name="copy_key">キーをコピー</string>
+    <string name="key">キー</string>
+    <string name="copy_key_successfully">キーがクリップボードにコピーされました</string>
+    <string name="delete_token_title">トークンの削除</string>
+    <string name="delete_token_message">%1$s を削除しますか？この操作は元に戻せません。</string>
+    <string name="delete">削除</string>
+    <string name="no_tokens_message">トークンがありません。右下のボタンをクリックして追加してください。</string>
+    <string name="token_deleted">トークンが削除されました</string>
+    <string name="add_verify_token">認証トークンを追加</string>
+    <string name="enter_account_name">アカウント名を入力してください</string>
+    <string name="enter_secret_key">秘密鍵を入力してください</string>
+</resources>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="issuer_hint">발행자 (선택사항)</string>
+    <string name="issuer">발행자</string>
+    <string name="account_hint">계정 이름</string>
+    <string name="secret_hint">비밀 키</string>
+    <string name="cancel">취소</string>
+    <string name="confirm">확인</string>
+    <string name="type">유형</string>
+    <string name="verification_code">인증 코드</string>
+    <string name="not_set">설정되지 않음</string>
+    <string name="successfully">키가 성공적으로 추가됨</string>
+    <string name="copy_successfully">인증 코드가 클립보드에 복사됨</string>
+    <string name="copy_verification_code">인증 코드 복사</string>
+    <string name="view_details">세부 정보 보기</string>
+    <string name="delete_token">토큰 삭제</string>
+    <string name="token_details">토큰 세부 정보</string>
+    <string name="copy_key">키 복사</string>
+    <string name="key">키</string>
+    <string name="copy_key_successfully">키가 클립보드에 복사됨</string>
+    <string name="delete_token_title">토큰 삭제</string>
+    <string name="delete_token_message">%1$s을(를) 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.</string>
+    <string name="delete">삭제</string>
+    <string name="no_tokens_message">토큰이 없습니다. 오른쪽 하단 버튼을 눌러 추가하세요.</string>
+    <string name="token_deleted">토큰이 삭제됨</string>
+    <string name="add_verify_token">인증 토큰 추가</string>
+    <string name="enter_account_name">계정 이름을 입력하세요</string>
+    <string name="enter_secret_key">비밀 키를 입력하세요</string>
+</resources>

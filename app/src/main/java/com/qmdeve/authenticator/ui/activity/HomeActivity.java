@@ -108,14 +108,14 @@ public class HomeActivity extends BaseActivity {
             public void onSuccess() {
                 runOnUiThread(() -> {
                     loadTokens();
-                    showSnackbar("令牌添加成功");
+                    showSnackbar(getString(R.string.successfully));
                 });
             }
 
             @Override
             public void onError(Exception e) {
                 runOnUiThread(() -> {
-                    showSnackbar("添加失败: " + e.getMessage());
+                    showSnackbar("Error: " + e.getMessage());
                 });
             }
         });
@@ -136,7 +136,7 @@ public class HomeActivity extends BaseActivity {
             @Override
             public void onError(Exception e) {
                 runOnUiThread(() -> {
-                    showSnackbar("加载失败: " + e.getMessage());
+                    showSnackbar("Error: " + e.getMessage());
                 });
             }
         });
@@ -147,17 +147,17 @@ public class HomeActivity extends BaseActivity {
             String code = TOTPGenerator.generateTOTP(token.getSecret(), token.getPeriod(), token.getDigits());
 
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("验证码", code);
+            ClipData clip = ClipData.newPlainText(getString(R.string.verification_code), code);
             clipboard.setPrimaryClip(clip);
 
-            showSnackbar("验证码已复制到剪贴板");
+            showSnackbar(getString(R.string.copy_successfully));
         } catch (Exception e) {
-            showSnackbar("复制失败: " + e.getMessage());
+            showSnackbar("Error: " + e.getMessage());
         }
     }
 
     private void showTokenOptionsDialog(Token token) {
-        String[] options = new String[]{"复制验证码", "查看详情", "删除令牌"};
+        String[] options = new String[]{getString(R.string.copy_verification_code), getString(R.string.view_details), getString(R.string.delete_token)};
 
         new MaterialAlertDialogBuilder(this)
                 .setTitle(token.getLabel())
@@ -174,7 +174,7 @@ public class HomeActivity extends BaseActivity {
                             break;
                     }
                 })
-                .setNegativeButton(getText(R.string.cancel), null)
+                .setNegativeButton(getString(R.string.cancel), null)
                 .show();
     }
 
@@ -186,34 +186,32 @@ public class HomeActivity extends BaseActivity {
             code = "Error";
         }
 
-        String details = getText(R.string.type) + ": TOTP" + "\n" +
-                getText(R.string.issuer) + ": " + (token.getIssuer() != null ? token.getIssuer() : getText(R.string.not_set)) + "\n" +
-                getText(R.string.account_hint) + ": " + token.getAccount() + "\n" +
-                getText(R.string.verification_code) + ": " + code;
+        String details = getString(R.string.type) + ": TOTP" + "\n" +
+                getString(R.string.issuer) + ": " + (token.getIssuer() != null ? token.getIssuer() : getString(R.string.not_set)) + "\n" +
+                getString(R.string.account_hint) + ": " + token.getAccount() + "\n" +
+                getString(R.string.verification_code) + ": " + code;
 
         new MaterialAlertDialogBuilder(this)
-                .setTitle("令牌详情")
+                .setTitle(getString(R.string.token_details))
                 .setMessage(details)
-                .setPositiveButton("确定", null)
-                .setNeutralButton("复制密钥", (dialog, which) -> {
-                    copySecretToClipboard(token);
-                })
+                .setPositiveButton(getString(R.string.confirm), null)
+                .setNeutralButton(getString(R.string.copy_key), (dialog, which) -> copySecretToClipboard(token))
                 .show();
     }
 
     private void copySecretToClipboard(Token token) {
         ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData clip = ClipData.newPlainText("密钥", token.getSecret());
+        ClipData clip = ClipData.newPlainText(getString(R.string.key), token.getSecret());
         clipboard.setPrimaryClip(clip);
-        showSnackbar("密钥已复制到剪贴板");
+        showSnackbar(getString(R.string.copy_key_successfully));
     }
 
     private void showDeleteTokenDialog(Token token) {
         new MaterialAlertDialogBuilder(this)
-                .setTitle("删除令牌")
-                .setMessage("确定要删除 " + token.getLabel() + " 吗？此操作不可撤销。")
-                .setPositiveButton("删除", (dialog, which) -> deleteToken(token))
-                .setNegativeButton("取消", null)
+                .setTitle(R.string.delete_token_title)
+                .setMessage(getString(R.string.delete_token_message, token.getLabel()))
+                .setPositiveButton(R.string.delete, (dialog, which) -> deleteToken(token))
+                .setNegativeButton(R.string.cancel, null)
                 .show();
     }
 
@@ -223,7 +221,7 @@ public class HomeActivity extends BaseActivity {
             public void onSuccess() {
                 runOnUiThread(() -> {
                     tokenAdapter.removeToken(token);
-                    showSnackbar("令牌已删除");
+                    showSnackbar(getString(R.string.token_deleted));
 
                     if (tokenAdapter.getItemCount() == 0) {
                         showEmptyState();
@@ -233,13 +231,13 @@ public class HomeActivity extends BaseActivity {
 
             @Override
             public void onError(Exception e) {
-                runOnUiThread(() -> showSnackbar("删除失败: " + e.getMessage()));
+                runOnUiThread(() -> showSnackbar("Error: " + e.getMessage()));
             }
         });
     }
 
     private void showEmptyState() {
-        showSnackbar("暂无令牌，点击右下角按钮添加");
+        showSnackbar(getString(R.string.no_tokens_message));
     }
 
     private void showSnackbar(String message) {

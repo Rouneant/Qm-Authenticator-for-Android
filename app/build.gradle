@@ -10,8 +10,8 @@ android {
         applicationId "com.qmdeve.authenticator"
         minSdk { version = release(23) }
         targetSdk { version = release(36) }
-        versionCode 1
-        versionName "1.0.0-Beta01"
+        versionCode 2
+        versionName "1.0.0-Beta02"
     }
 
     buildTypes {
