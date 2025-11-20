@@ -25,11 +25,17 @@
 
 ---
 
-### Screenshot
+### Preview
 
-|                  Add Token                  |           Verification code list            |
-|:-------------------------------------------:|:-------------------------------------------:|
-| <img src="img/screenshot1.jpg" width="200"> | <img src="img/screenshot2.jpg" width="200"> |
+#### Add Token
+|                 Light Mode                 |                 Dark Mode                 |
+|:------------------------------------------:|:-----------------------------------------:|
+| <img src="img/img1_light.jpg" width="200"> | <img src="img/img1_dark.jpg" width="200"> |
+
+#### Verification code list
+|                 Light Mode                 |                 Dark Mode                  |
+|:------------------------------------------:|:------------------------------------------:|
+| <img src="img/img2_light.jpg" width="200"> | <img src="img/img2_light.jpg" width="200"> |
 
 ---
 
