@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +22,7 @@ import com.qmdeve.authenticator.base.BaseActivity;
 import com.qmdeve.authenticator.model.Token;
 import com.qmdeve.authenticator.repository.TokenRepository;
 import com.qmdeve.authenticator.ui.dialog.AddTokenDialog;
+import com.qmdeve.authenticator.util.GitHubUpdateChecker;
 import com.qmdeve.authenticator.util.TOTPGenerator;
 import com.qmdeve.authenticator.util.Utils;
 
@@ -35,11 +37,15 @@ public class HomeActivity extends BaseActivity {
     private TokenRepository tokenRepository;
     private int statusBarHeight = 0;
     private int navigationBarHeight = 0;
+    private GitHubUpdateChecker updateChecker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        updateChecker = new GitHubUpdateChecker(this);
+        checkForUpdates();
 
         initView();
         setRecyclerView();
@@ -275,5 +281,22 @@ public class HomeActivity extends BaseActivity {
         if (tokenAdapter != null) {
             tokenAdapter.onDetachedFromRecyclerView(recyclerView);
         }
+        if (updateChecker != null) {
+            updateChecker.destroy();
+        }
+    }
+
+    private void checkForUpdates() {
+        updateChecker.checkForUpdates(new GitHubUpdateChecker.UpdateCheckListener() {
+            @Override
+            public void onUpdateAvailable(String latestVersion, String downloadUrl, String releaseBody) {
+                runOnUiThread(() -> Utils.showUpdateDialog(HomeActivity.this, latestVersion, downloadUrl, releaseBody));
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.e("Qm Authenticator", "Error", e);
+            }
+        });
     }
 }

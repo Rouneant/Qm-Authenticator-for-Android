@@ -27,4 +27,5 @@
     <string name="enter_account_name">请输入账户名</string>
     <string name="enter_secret_key">请输入密钥</string>
     <string name="qq_group">QQ 交流群</string>
+    <string name="new_version">发现新版本</string>
 </resources>

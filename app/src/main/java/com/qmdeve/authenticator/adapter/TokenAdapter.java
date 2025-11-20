@@ -1,5 +1,6 @@
 package com.qmdeve.authenticator.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +20,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TokenAdapter extends RecyclerView.Adapter<TokenAdapter.TokenViewHolder> {
-
     private List<Token> tokens = new ArrayList<>();
     private Timer timer;
     private RecyclerView recyclerView;
@@ -120,11 +120,13 @@ public class TokenAdapter extends RecyclerView.Adapter<TokenAdapter.TokenViewHol
     }
 
     class TokenViewHolder extends RecyclerView.ViewHolder {
-        private TextView issuerText;
-        private TextView accountText;
-        private TextView codeText;
-        private CircularProgressIndicator progressIndicator;
+        private final TextView issuerText;
+        private final TextView accountText;
+        private final TextView codeText;
+        private final CircularProgressIndicator progressIndicator;
         private Token currentToken;
+        private int originalColor = -1;
+        private boolean colorsRecorded = false;
 
         public TokenViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -141,7 +143,7 @@ public class TokenAdapter extends RecyclerView.Adapter<TokenAdapter.TokenViewHol
             itemView.setFocusable(true);
 
             itemView.setOnClickListener(v -> {
-                int position = getAdapterPosition();
+                int position = getBindingAdapterPosition();
                 if (position != RecyclerView.NO_POSITION && listener != null) {
                     Token token = tokens.get(position);
                     listener.onTokenClick(token);
@@ -149,7 +151,7 @@ public class TokenAdapter extends RecyclerView.Adapter<TokenAdapter.TokenViewHol
             });
 
             itemView.setOnLongClickListener(v -> {
-                int position = getAdapterPosition();
+                int position = getBindingAdapterPosition();
                 if (position != RecyclerView.NO_POSITION && listener != null) {
                     Token token = tokens.get(position);
                     listener.onTokenLongClick(token);
@@ -161,6 +163,8 @@ public class TokenAdapter extends RecyclerView.Adapter<TokenAdapter.TokenViewHol
 
         public void bind(Token token) {
             this.currentToken = token;
+            colorsRecorded = false;
+            originalColor = -1;
 
             if (token.getIssuer() != null && !token.getIssuer().trim().isEmpty()) {
                 issuerText.setText(token.getIssuer());
@@ -189,12 +193,19 @@ public class TokenAdapter extends RecyclerView.Adapter<TokenAdapter.TokenViewHol
             progressIndicator.setProgress((int) remainingTime);
             progressIndicator.setVisibility(View.VISIBLE);
 
+            if (!colorsRecorded) {
+                originalColor = progressIndicator.getIndicatorColor()[0];
+                colorsRecorded = true;
+            }
+
             if (remainingTime <= 10) {
                 codeText.setTextColor(itemView.getContext().getColor(R.color.material_red_500));
                 progressIndicator.setIndicatorColor(itemView.getContext().getColor(R.color.material_red_500));
             } else {
-                codeText.setTextColor(itemView.getContext().getColor(R.color.material_on_surface_variant));
-                progressIndicator.setIndicatorColor(itemView.getContext().getColor(R.color.material_on_surface_variant));
+                if (originalColor != -1) {
+                    codeText.setTextColor(originalColor);
+                    progressIndicator.setIndicatorColor(originalColor);
+                }
             }
         }
 
@@ -202,7 +213,7 @@ public class TokenAdapter extends RecyclerView.Adapter<TokenAdapter.TokenViewHol
             try {
                 return TOTPGenerator.generateTOTP(token.getSecret(), token.getPeriod(), token.getDigits());
             } catch (Exception e) {
-                e.printStackTrace();
+                Log.e("Qm Authenticator", "Error: ", e);
                 return "Error";
             }
         }

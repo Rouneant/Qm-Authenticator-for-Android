@@ -2,16 +2,22 @@ package com.qmdeve.authenticator.util;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import io.noties.markwon.Markwon;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.qmdeve.authenticator.R;
 
 public class Utils {
     public static void immersiveNavigationBar(Window window) {
@@ -58,5 +64,21 @@ public class Utils {
                 dp,
                 context.getResources().getDisplayMetrics()
         );
+    }
+
+    public static void showUpdateDialog(Context context, String version, String url, String updateContent) {
+        final Markwon markwon = Markwon.builder(context).build();
+        TextView textView = new TextView(context);
+        textView.setPadding(50, 40, 50, 40);
+        markwon.setMarkdown(textView, updateContent);
+
+        new MaterialAlertDialogBuilder(context)
+                .setTitle(context.getString(R.string.new_version) + " (" + version + ")")
+                .setView(textView)
+                .setPositiveButton("Update", (dialog, which) -> {
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                })
+                .setNegativeButton(context.getString(R.string.cancel), (dialog, which) -> {})
+                .show();
     }
 }
