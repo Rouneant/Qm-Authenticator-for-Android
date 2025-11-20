@@ -35,7 +35,7 @@
 #### 验证码列表
 |                 浅色模式                 |                 深色模式                  |
 |:------------------------------------------:|:------------------------------------------:|
-| <img src="img/img2_light.jpg" width="200"> | <img src="img/img2_light.jpg" width="200"> |
+| <img src="img/img2_light.jpg" width="200"> | <img src="img/img2_dark.jpg" width="200"> |
 ---
 
 ### 下载与安装

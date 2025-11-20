@@ -35,7 +35,7 @@
 #### Verification code list
 |                 Light Mode                 |                 Dark Mode                  |
 |:------------------------------------------:|:------------------------------------------:|
-| <img src="img/img2_light.jpg" width="200"> | <img src="img/img2_light.jpg" width="200"> |
+| <img src="img/img2_light.jpg" width="200"> | <img src="img/img2_dark.jpg" width="200"> |
 
 ---
 
