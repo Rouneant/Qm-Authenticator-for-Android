@@ -7,12 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.qmdeve.authenticator.util.Utils;
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        Utils.immersiveNavigationBar(getWindow());
-        Utils.immersiveStatusBar(getWindow());
+        Utils.applyImmersiveSystemBars(getWindow());
     }
 }

@@ -23,7 +23,18 @@
     <string name="delete">削除</string>
     <string name="no_tokens_message">トークンがありません。右下のボタンをクリックして追加してください。</string>
     <string name="token_deleted">トークンが削除されました</string>
-    <string name="add_verify_token">認証トークンを追加</string>
+    <string name="add_verify_key">認証トークンを追加</string>
     <string name="enter_account_name">アカウント名を入力してください</string>
     <string name="enter_secret_key">秘密鍵を入力してください</string>
+    <string name="enter_setting_key">設定キーを入力</string>
+    <string name="scan_qr_code">QRコードをスキャン</string>
+    <string name="import_qm">Qm Authenticatorをインポート</string>
+    <string name="adding_method">追加方法</string>
+    <string name="export_failed">エクスポート失敗</string>
+    <string name="failed_generate_qr">QRコードの生成に失敗しました</string>
+    <string name="failed_generate_verification_code">認証コードの生成に失敗しました</string>
+    <string name="invalid_qr_code">無効なQRコード</string>
+    <string name="error_occurred_while_processing_qr_code">QRコードの処理中にエラーが発生しました</string>
+    <string name="scan_failed">スキャンに失敗しました</string>
+    <string name="permissions">QRコードをスキャンするにはカメラ権限が必要です</string>
 </resources>

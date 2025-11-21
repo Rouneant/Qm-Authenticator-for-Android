@@ -23,9 +23,21 @@
     <string name="delete">删除</string>
     <string name="no_tokens_message">暂无令牌，点击右下角按钮添加</string>
     <string name="token_deleted">令牌已删除</string>
-    <string name="add_verify_token">添加验证令牌</string>
+    <string name="add_verify_key">添加验证密钥</string>
     <string name="enter_account_name">请输入账户名</string>
     <string name="enter_secret_key">请输入密钥</string>
     <string name="qq_group">QQ 交流群</string>
     <string name="new_version">发现新版本</string>
+    <string name="enter_setting_key">输入设置密钥</string>
+    <string name="scan_qr_code">扫描二维码</string>
+    <string name="import_qm">导入 Qm Authenticator</string>
+    <string name="adding_method">添加方式</string>
+    <string name="export_failed">导出失败</string>
+    <string name="failed_generate_qr">生成二维码失败</string>
+    <string name="failed_generate_verification_code">生成验证码失败</string>
+    <string name="invalid_qr_code">无效的二维码</string>
+    <string name="error_occurred_while_processing_qr_code">处理二维码时发生错误</string>
+    <string name="scan_failed">扫描失败</string>
+    <string name="permissions">需要相机权限才能扫描二维码</string>
+    <string name="export_tokens">导出令牌</string>
 </resources>

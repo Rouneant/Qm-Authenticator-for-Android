@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_export"
+        android:title="@string/export_tokens"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/menu_github"
         android:icon="@drawable/ic_github"
         android:title="GitHub"

@@ -6,8 +6,11 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
+
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
@@ -17,7 +20,7 @@ import com.qmdeve.authenticator.model.Token;
 
 import java.util.Objects;
 
-public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
+public class AddTokenDialog extends DialogFragment {
 
     private TextInputEditText issuerEditText;
     private TextInputEditText accountEditText;
@@ -40,19 +43,16 @@ public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(requireContext());
-        builder.setTitle(getString(R.string.add_verify_token));
-        builder.setView(createDialogView());
-        return builder.create();
+        return new MaterialAlertDialogBuilder(requireContext())
+                .setTitle(getString(R.string.add_verify_key))
+                .setView(createDialogView())
+                .create();
     }
 
     private View createDialogView() {
-        LayoutInflater inflater = requireActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.dialog_add_token, null);
-
+        View view = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_add_token, null);
         initView(view);
         setupClickListeners();
-
         return view;
     }
 
@@ -68,7 +68,6 @@ public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
 
     private void setupClickListeners() {
         cancelButton.setOnClickListener(v -> dismiss());
-
         confirmButton.setOnClickListener(v -> {
             if (validateInput()) {
                 addToken();
@@ -78,40 +77,45 @@ public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
 
     private boolean validateInput() {
         boolean isValid = true;
+        clearErrors();
 
-        if (TextUtils.isEmpty(accountEditText.getText())) {
+        if (TextUtils.isEmpty(getText(accountEditText))) {
             accountInputLayout.setError(getString(R.string.enter_account_name));
             isValid = false;
-        } else {
-            accountInputLayout.setError(null);
         }
 
-        if (TextUtils.isEmpty(secretEditText.getText())) {
+        String secret = normalizeSecret(getText(secretEditText));
+        if (TextUtils.isEmpty(secret)) {
             secretInputLayout.setError(getString(R.string.enter_secret_key));
             isValid = false;
-        } else {
-            secretInputLayout.setError(null);
         }
 
         return isValid;
     }
 
     private void addToken() {
-        String issuer = issuerEditText.getText() != null ?
-                issuerEditText.getText().toString().trim() : "";
-        String account = accountEditText.getText() != null ?
-                accountEditText.getText().toString().trim() : "";
-        String secret = secretEditText.getText() != null ?
-                secretEditText.getText().toString().trim().toUpperCase() : "";
-        secret = secret.replaceAll("\\s+", "");
+        String issuer = getText(issuerEditText);
+        String account = getText(accountEditText);
+        String secret = normalizeSecret(getText(secretEditText));
 
         Token token = new Token(issuer, account, secret, Token.TokenType.TOTP);
-
         if (listener != null) {
             listener.onTokenAdded(token);
         }
-
         dismiss();
+    }
+
+    private void clearErrors() {
+        accountInputLayout.setError(null);
+        secretInputLayout.setError(null);
+    }
+
+    private String getText(TextInputEditText editText) {
+        return editText.getText() == null ? "" : editText.getText().toString().trim();
+    }
+
+    private String normalizeSecret(String secret) {
+        return secret == null ? "" : secret.replaceAll("\\s+", "").toUpperCase();
     }
 
     @Override
@@ -119,9 +123,7 @@ public class AddTokenDialog extends androidx.fragment.app.DialogFragment {
         super.onStart();
         Dialog dialog = getDialog();
         if (dialog != null) {
-            int width = ViewGroup.LayoutParams.MATCH_PARENT;
-            int height = ViewGroup.LayoutParams.WRAP_CONTENT;
-            Objects.requireNonNull(dialog.getWindow()).setLayout(width, height);
+            Objects.requireNonNull(dialog.getWindow()).setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         }
     }
 }

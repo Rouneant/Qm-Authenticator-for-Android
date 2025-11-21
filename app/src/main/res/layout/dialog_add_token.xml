@@ -22,7 +22,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/issuer_hint"
-            android:maxLines="1" />
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -42,7 +45,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/account_hint"
-            android:maxLines="1" />
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,7 +68,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/secret_hint"
-            android:maxLines="1" />
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -73,22 +82,22 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/cancel_button"
+            style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:text="@string/cancel"
-            app:cornerRadius="20dp"
-            style="@style/Widget.Material3.Button.TextButton" />
+            app:cornerRadius="20dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/confirm_button"
+            style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:text="@string/confirm"
-            app:cornerRadius="20dp"
-            style="@style/Widget.Material3.Button" />
+            app:cornerRadius="20dp" />
     </LinearLayout>
 </LinearLayout>

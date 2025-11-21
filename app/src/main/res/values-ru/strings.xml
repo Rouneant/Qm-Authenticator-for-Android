@@ -23,7 +23,18 @@
     <string name="delete">Удалить</string>
     <string name="no_tokens_message">Токены отсутствуют. Нажмите кнопку в правом нижнем углу, чтобы добавить.</string>
     <string name="token_deleted">Токен удален</string>
-    <string name="add_verify_token">Добавить токен проверки</string>
+    <string name="add_verify_key">Добавить токен проверки</string>
     <string name="enter_account_name">Введите имя учетной записи</string>
     <string name="enter_secret_key">Введите секретный ключ</string>
+    <string name="enter_setting_key">Введите ключ настройки</string>
+    <string name="scan_qr_code">Сканировать QR-код</string>
+    <string name="import_qm">Импорт Qm Authenticator</string>
+    <string name="adding_method">Способ добавления</string>
+    <string name="export_failed">Ошибка экспорта</string>
+    <string name="failed_generate_qr">Не удалось создать QR-код</string>
+    <string name="failed_generate_verification_code">Не удалось создать проверочный код</string>
+    <string name="invalid_qr_code">Неверный QR-код</string>
+    <string name="error_occurred_while_processing_qr_code">Ошибка при обработке QR-кода</string>
+    <string name="scan_failed">Сканирование не удалось</string>
+    <string name="permissions">Для сканирования QR-кода требуется разрешение на использование камеры</string>
 </resources>

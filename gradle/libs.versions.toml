@@ -9,6 +9,11 @@ okhttp = "5.3.2"
 roomRuntime = "2.8.3"
 securityCrypto = "1.1.0"
 markwon = "4.6.2"
+camera = "1.6.0-alpha01"
+mlkit = "17.3.0"
+guava = "31.0.1-android"
+gson = "2.13.2"
+zxing = "3.5.4"
 
 [libraries]
 androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
@@ -21,6 +26,14 @@ commons-codec = { module = "commons-codec:commons-codec", version.ref = "commons
 material = { module = "com.google.android.material:material", version.ref = "material" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 markwon = { module = "io.noties.markwon:core", version.ref = "markwon" }
+camera-core = { module = "androidx.camera:camera-core", version.ref = "camera" }
+camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camera" }
+camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camera" }
+camera-view = { module = "androidx.camera:camera-view", version.ref = "camera" }
+mlkit = { module = "com.google.mlkit:barcode-scanning", version.ref = "mlkit" }
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+zxing-core = { module = "com.google.zxing:core", version.ref = "zxing" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
