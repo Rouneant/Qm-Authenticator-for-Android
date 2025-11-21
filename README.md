@@ -10,7 +10,7 @@
 [![Telegram](https://img.shields.io/badge/Telegram%20Group-QmDeves-blue.svg?logo=telegram)](https://t.me/QmDeves)
 [![QQ Group](https://img.shields.io/badge/QQ%20Group-1046829337-blue.svg?logo=qq)](https://qm.qq.com/q/OEVn8ZslMq)
 
-**English | [简体中文](./README_zh.md)**
+**English | [简体中文](./README_zh.md) | [Русский](./README_ru.md) | [日本語](./README_ja.md)**
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ### Characteristic
 
-- **Safety First**：All keys are **completely offline** stored locally on the device and will never be uploaded to any server
+- **Key security**：All keys are **completely offline** stored locally on the device and will never be uploaded to any server
 - **Open source**：The complete source code is open, and security and privacy are available for anyone to review
 - **Standard compatibility**：Supports Time-Based One-Time Password Algorithm (TOTP), compatible with all services using this standard (e.g., Google, GitHub, Microsoft, etc.)
 - **Simple and easy to use**：**Material Design 3** is a design style that provides an intuitive and smooth user experience
@@ -27,15 +27,15 @@
 
 ### Preview
 
-#### Add Token
-|                 Light Mode                 |                 Dark Mode                 |
-|:------------------------------------------:|:-----------------------------------------:|
-| <img src="img/img1_light.jpg" width="200"> | <img src="img/img1_dark.jpg" width="200"> |
-
-#### Verification code list
-|                 Light Mode                 |                 Dark Mode                  |
-|:------------------------------------------:|:------------------------------------------:|
-| <img src="img/img2_light.jpg" width="200"> | <img src="img/img2_dark.jpg" width="200"> |
+|                  Light Mode                  |                  Dark Mode                   |
+|:--------------------------------------------:|:--------------------------------------------:|
+|  <img src="img/img1-light.jpg" width="200">  |  <img src="img/img1-dark.jpg" width="200">   |
+|                  Light Mode                  |                  Dark Mode                   |
+| :------------------------------------------: | :------------------------------------------: |
+|  <img src="img/img2-light.jpg" width="200">  |  <img src="img/img2-dark.jpg" width="200">   |
+|                  Light Mode                  |                  Dark Mode                   |
+| :------------------------------------------: | :------------------------------------------: |
+|  <img src="img/img3-light.jpg" width="200">  |  <img src="img/img3-dark.jpg" width="200">   |
 
 ---
 

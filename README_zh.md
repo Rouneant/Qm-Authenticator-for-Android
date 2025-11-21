@@ -10,7 +10,7 @@
 [![Telegram](https://img.shields.io/badge/Telegram%20Group-QmDeves-blue.svg?logo=telegram)](https://t.me/QmDeves)
 [![QQ Group](https://img.shields.io/badge/QQ%20Group-1046829337-blue.svg?logo=qq)](https://qm.qq.com/q/OEVn8ZslMq)
 
-**[English](./README.md) | 简体中文**
+**[English](./README.md) | 简体中文 | [Русский](./README_ru.md) | [日本語](./README_ja.md)**
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ### 特性
 
-- **安全第一**：所有密钥**完全离线**存储在设备本地，绝不会上传到任何服务器。
+- **密钥安全**：所有密钥**完全离线**存储在设备本地
 - **开源透明**：完整的源代码开放，安全性和隐私性可供任何人审查。
 - **标准兼容**：支持基于时间的一次性密码算法（TOTP），与所有使用此标准（如 Google, GitHub, Microsoft 等）的服务兼容。
 - **简洁易用**：**Material Design 3** 设计风格，提供直观、流畅的用户体验。
@@ -27,15 +27,15 @@
 
 ### 预览
 
-#### 添加令牌
-|                    浅色模式                    |                   深色模式                    |
-|:------------------------------------------:|:-----------------------------------------:|
-| <img src="img/img1_light.jpg" width="200"> | <img src="img/img1_dark.jpg" width="200"> |
-
-#### 验证码列表
-|                 浅色模式                 |                 深色模式                  |
-|:------------------------------------------:|:------------------------------------------:|
-| <img src="img/img2_light.jpg" width="200"> | <img src="img/img2_dark.jpg" width="200"> |
+|                     浅色模式                     |                     深色模式                     |
+|:--------------------------------------------:|:--------------------------------------------:|
+|  <img src="img/img1-light.jpg" width="200">  |  <img src="img/img1-dark.jpg" width="200">   |
+|                     浅色模式                     |                     深色模式                     |
+| :------------------------------------------: | :------------------------------------------: |
+|  <img src="img/img2-light.jpg" width="200">  |  <img src="img/img2-dark.jpg" width="200">   |
+|                     浅色模式                     |                     深色模式                     |
+| :------------------------------------------: | :------------------------------------------: |
+|  <img src="img/img3-light.jpg" width="200">  |  <img src="img/img3-dark.jpg" width="200">   |
 ---
 
 ### 下载与安装
