@@ -39,5 +39,4 @@ If you have any questions about this Privacy Policy or the App, please contact u
 **Email:** me@qmdeve.com
 
 ## GitHub repository
-
-(https://github.com/Rouneant/Qm-Authenticator-for-Android)[https://github.com/Rouneant/Qm-Authenticator-for-Android]
+https://github.com/Rouneant/Qm-Authenticator-for-Android
