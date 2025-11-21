@@ -30,9 +30,11 @@
 |                   Light Mode                    |                  Dark Mode                   |
 |:--------------------------------------------:|:--------------------------------------------:|
 |  <img src="img/img1-light.jpg" width="200">  |  <img src="img/img1-dark.jpg" width="200">   |
+
 |                     Light Mode                     |                     Dark Mode                     |
 | :------------------------------------------: | :------------------------------------------: |
 |  <img src="img/img2-light.jpg" width="200">  |  <img src="img/img2-dark.jpg" width="200">   |
+
 |                     Light Mode                     |                     Dark Mode                     |
 | :------------------------------------------: | :------------------------------------------: |
 |  <img src="img/img3-light.jpg" width="200">  |  <img src="img/img3-dark.jpg" width="200">   |
