@@ -131,7 +131,7 @@ public class HomeActivity extends BaseActivity {
     }
 
     private void showAddOptions() {
-        final String[] items = {getString(R.string.enter_secret_key), getString(R.string.scan_qr_code), getString(R.string.import_qm)};
+        final String[] items = {getString(R.string.enter_setting_key), getString(R.string.scan_qr_code), getString(R.string.import_qm)};
         new MaterialAlertDialogBuilder(this)
                 .setTitle(getString(R.string.adding_method))
                 .setItems(items, (dialog, which) -> {
