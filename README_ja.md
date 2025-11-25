@@ -33,6 +33,14 @@
 
 ---
 
+<div align="center">
+
 ### ダウンロードとインストール
-#### GitHub Releasesからダウンロードする
-[Releases](https://github.com/Rouneant/Qm-Authenticator-for-Android/releases)ページにアクセスして、最新の`app-release.apk`ファイルをダウンロードしてください。
+
+  <a href="https://github.com/Rouneant/Qm-Authenticator-for-Android/releases">
+    <img src="./img/github-download.png" width="120">
+  </a>
+  <a href="https://apkpure.com/p/com.qmdeve.authenticator">
+    <img src="./img/apkpure-download.png" width="120">
+  </a>
+</div>
