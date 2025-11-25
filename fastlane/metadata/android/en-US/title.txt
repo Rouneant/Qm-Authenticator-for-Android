@@ -1,1 +1,1 @@
-Qm Authenticator
+Qm Authenticator - 2FA
