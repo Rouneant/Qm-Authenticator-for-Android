@@ -26,11 +26,11 @@
     <string name="add_verify_key">Add Verification Key</string>
     <string name="enter_account_name">Please enter account name</string>
     <string name="enter_secret_key">Please enter secret key</string>
-    <string name="telegram_group">Telegram Group</string>
-    <string name="qq_group">QQ Group</string>
-    <string name="new_version">New Version</string>
-    <string name="update">Update</string>
-    <string name="code_error_placeholder">Error</string>
+    <string name="telegram_group" translatable="false">Telegram Group</string>
+    <string name="qq_group" translatable="false">QQ Group</string>
+    <string name="new_version" translatable="false">New Version</string>
+    <string name="update" translatable="false">Update</string>
+    <string name="code_error_placeholder" translatable="false">Error</string>
     <string name="enter_setting_key">Enter the setting key</string>
     <string name="scan_qr_code">Scan QR code</string>
     <string name="import_qm">Import Qm Authenticator</string>
@@ -42,5 +42,5 @@
     <string name="error_occurred_while_processing_qr_code">An error occurred while processing the QR code</string>
     <string name="scan_failed">Scanning failed</string>
     <string name="permissions">Camera permissions are required to scan QR codes</string>
-    <string name="export_tokens">Export Tokens</string>
+    <string name="export_tokens" translatable="false">Export Tokens</string>
 </resources>

@@ -27,17 +27,8 @@
 
 ### Preview
 
-|                  Light Mode                  |                  Dark Mode                   |
-|:--------------------------------------------:|:--------------------------------------------:|
-|  <img src="img/img1-light.jpg" width="200">  |  <img src="img/img1-dark.jpg" width="200">   |
-
-|                  Light Mode                  |                  Dark Mode                   |
-| :------------------------------------------: | :------------------------------------------: |
-|  <img src="img/img2-light.jpg" width="200">  |  <img src="img/img2-dark.jpg" width="200">   |
-
-|                  Light Mode                  |                  Dark Mode                   |
-| :------------------------------------------: | :------------------------------------------: |
-|  <img src="img/img3-light.jpg" width="200">  |  <img src="img/img3-dark.jpg" width="200">   |
+|:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|
+|  <img src="./fastlane/metadata/android/en-US/images/phoneScreenhots/01.png" width="200">  |  <img src="./fastlane/metadata/android/en-US/images/phoneScreenhots/02.png" width="200">   |  <img src="./fastlane/metadata/android/en-US/images/phoneScreenhots/03.png" width="200">   |
 
 ---
 

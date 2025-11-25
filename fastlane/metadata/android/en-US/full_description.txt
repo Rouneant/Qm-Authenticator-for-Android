@@ -1,0 +1,6 @@
+An open-source, secure, offline two-factor authentication (2FA) application developed for Android. It helps you add an extra layer of security to your online account
+
+## Characteristic:
+ - All keys are completely offline stored locally on the device and will never be uploaded to any server
+ - Supports Time-Based One-Time Password Algorithm (TOTP), compatible with all services using this standard (e.g., Google, GitHub, Microsoft, etc.)
+ - Material Design 3 is a design style that provides an intuitive and smooth user experience
