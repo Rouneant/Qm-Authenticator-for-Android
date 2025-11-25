@@ -1,1 +1,1 @@
-An open-source, secure, offline two-factor authentication (2FA) application developed for Android
+An open-source, secure, offline 2FA application developed for Android
