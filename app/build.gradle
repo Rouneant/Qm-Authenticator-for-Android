@@ -20,6 +20,7 @@ android {
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -33,6 +34,15 @@ android {
     packagingOptions {
         jniLibs {
             useLegacyPackaging false
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(System.getenv('RELEASE_STORE_FILE') ?: "")
+            storePassword System.getenv('RELEASE_STORE_PASSWORD') ?: ""
+            keyAlias System.getenv('RELEASE_KEY_ALIAS') ?: ""
+            keyPassword System.getenv('RELEASE_KEY_PASSWORD') ?: ""
         }
     }
 }
