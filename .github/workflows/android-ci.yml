@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 env:
   BUILD_TOOLS_VERSION: '36.0.0'
