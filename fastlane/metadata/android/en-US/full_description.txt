@@ -1,4 +1,4 @@
-An open-source, secure, offline two-factor authentication (2FA) application developed for Android. It helps you add an extra layer of security to your online account
+An open-source, secure, offline two-factor authentication (2FA) Application developed for Android. It helps you add an extra layer of security to your online account
 
 ## Characteristic:
  - All keys are completely offline stored locally on the device and will never be uploaded to any server
