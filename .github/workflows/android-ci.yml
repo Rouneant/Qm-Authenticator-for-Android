@@ -41,7 +41,7 @@ jobs:
           chmod +x ./gradlew
           ./gradlew assembleRelease --info
         env:
-          RELEASE_STORE_FILE: app/release.keystore
+          RELEASE_STORE_FILE: release.keystore
           RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
           RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
           RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
