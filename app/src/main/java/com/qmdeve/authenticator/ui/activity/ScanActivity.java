@@ -9,6 +9,7 @@ import android.util.Log;
 import android.util.Size;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.camera.core.CameraSelector;
@@ -21,15 +22,22 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.material.color.DynamicColors;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.google.mlkit.vision.barcode.BarcodeScanner;
-import com.google.mlkit.vision.barcode.BarcodeScannerOptions;
-import com.google.mlkit.vision.barcode.BarcodeScanning;
-import com.google.mlkit.vision.barcode.common.Barcode;
-import com.google.mlkit.vision.common.InputImage;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.BinaryBitmap;
+import com.google.zxing.DecodeHintType;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.PlanarYUVLuminanceSource;
+import com.google.zxing.ReaderException;
+import com.google.zxing.Result;
+import com.google.zxing.common.HybridBinarizer;
 import com.qmdeve.authenticator.R;
 import com.qmdeve.authenticator.base.BaseActivity;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -45,8 +53,9 @@ public class ScanActivity extends BaseActivity {
 
     private PreviewView viewFinder;
     private ExecutorService cameraExecutor;
-    private BarcodeScanner barcodeScanner;
+    private MultiFormatReader multiFormatReader;
     private boolean isResultReturned = false;
+    private byte[] rotatedDataCache;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,11 +63,18 @@ public class ScanActivity extends BaseActivity {
         DynamicColors.applyToActivitiesIfAvailable(getApplication());
         setContentView(R.layout.activity_scan);
 
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                setResult(RESULT_CANCELED);
+                finish();
+            }
+        });
+
         viewFinder = findViewById(R.id.viewFinder);
         cameraExecutor = Executors.newSingleThreadExecutor();
-        barcodeScanner = BarcodeScanning.getClient(new BarcodeScannerOptions.Builder()
-                .setBarcodeFormats(Barcode.FORMAT_QR_CODE)
-                .build());
+
+        initMultiFormatReader();
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -68,11 +84,21 @@ public class ScanActivity extends BaseActivity {
         }
     }
 
+    private void initMultiFormatReader() {
+        multiFormatReader = new MultiFormatReader();
+        Map<DecodeHintType, Object> hints = new EnumMap<>(DecodeHintType.class);
+        List<BarcodeFormat> formats = new ArrayList<>();
+        formats.add(BarcodeFormat.QR_CODE);
+        hints.put(DecodeHintType.POSSIBLE_FORMATS, formats);
+        hints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
+        multiFormatReader.setHints(hints);
+    }
+
     private void onCameraPermissionResult(boolean granted) {
         if (granted) {
             startCamera();
         } else {
-            Toast.makeText(this, "需要相机权限才能扫描二维码", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "需要相机权限", Toast.LENGTH_SHORT).show();
             setResult(RESULT_SCAN_FAILED);
             finish();
         }
@@ -90,6 +116,7 @@ public class ScanActivity extends BaseActivity {
                         .setTargetResolution(new Size(1280, 720))
                         .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
                         .build();
+
                 imageAnalysis.setAnalyzer(cameraExecutor, this::scanBarcode);
 
                 cameraProvider.unbindAll();
@@ -103,50 +130,78 @@ public class ScanActivity extends BaseActivity {
 
     @SuppressLint("UnsafeOptInUsageError")
     private void scanBarcode(ImageProxy imageProxy) {
-        try {
-            if (imageProxy.getImage() == null) {
-                imageProxy.close();
+        if (isResultReturned) {
+            imageProxy.close();
+            return;
+        }
+
+        try (imageProxy) {
+            if (imageProxy.getPlanes().length == 0) {
                 return;
             }
 
-            if (isResultReturned) {
-                imageProxy.close();
-                return;
+            ImageProxy.PlaneProxy plane = imageProxy.getPlanes()[0];
+            ByteBuffer buffer = plane.getBuffer();
+            int width = imageProxy.getWidth();
+            int height = imageProxy.getHeight();
+            int rowStride = plane.getRowStride();
+
+            int rotatedWidth = height;
+            int rotatedHeight = width;
+
+            if (rotatedDataCache == null || rotatedDataCache.length != rotatedWidth * rotatedHeight) {
+                rotatedDataCache = new byte[rotatedWidth * rotatedHeight];
             }
 
-            InputImage image = InputImage.fromMediaImage(
-                    imageProxy.getImage(),
-                    imageProxy.getImageInfo().getRotationDegrees()
+            rotateYUV90(buffer, width, height, rowStride, rotatedDataCache);
+
+            PlanarYUVLuminanceSource source = new PlanarYUVLuminanceSource(
+                    rotatedDataCache,
+                    rotatedWidth,
+                    rotatedHeight,
+                    0, 0,
+                    rotatedWidth,
+                    rotatedHeight,
+                    false
             );
 
-            barcodeScanner.process(image)
-                    .addOnSuccessListener(this::handleBarcodes)
-                    .addOnCompleteListener(task -> imageProxy.close());
+            BinaryBitmap bitmap = new BinaryBitmap(new HybridBinarizer(source));
+            try {
+                Result result = multiFormatReader.decodeWithState(bitmap);
+                if (result != null) {
+                    handleResult(result.getText());
+                }
+            } catch (ReaderException ignored) {
+            } finally {
+                multiFormatReader.reset();
+            }
+
         } catch (Exception e) {
-            Log.e(TAG, "scanBarcode error", e);
-            imageProxy.close();
+            Log.e(TAG, "Analysis Error", e);
         }
     }
 
-    private void handleBarcodes(List<Barcode> barcodes) {
-        if (barcodes == null || barcodes.isEmpty() || isResultReturned) {
-            return;
+    private void rotateYUV90(ByteBuffer srcBuffer, int srcWidth, int srcHeight, int rowStride, byte[] dest) {
+        srcBuffer.rewind();
+        for (int y = 0; y < srcHeight; y++) {
+            for (int x = 0; x < srcWidth; x++) {
+                int srcIndex = y * rowStride + x;
+                int destIndex = x * srcHeight + (srcHeight - 1 - y);
+                dest[destIndex] = srcBuffer.get(srcIndex);
+            }
         }
-        String rawValue = barcodes.get(0).getRawValue();
-        if (rawValue == null) {
-            return;
-        }
-        isResultReturned = true;
-        Intent resultIntent = new Intent();
-        resultIntent.putExtra(EXTRA_SCAN_RESULT, rawValue);
-        setResult(RESULT_SCAN_SUCCESS, resultIntent);
-        finish();
     }
 
-    @Override
-    public void onBackPressed() {
-        setResult(RESULT_CANCELED);
-        super.onBackPressed();
+    private void handleResult(String rawValue) {
+        if (rawValue == null || isResultReturned) return;
+
+        runOnUiThread(() -> {
+            isResultReturned = true;
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra(EXTRA_SCAN_RESULT, rawValue);
+            setResult(RESULT_SCAN_SUCCESS, resultIntent);
+            finish();
+        });
     }
 
     @Override
@@ -155,8 +210,6 @@ public class ScanActivity extends BaseActivity {
         if (cameraExecutor != null) {
             cameraExecutor.shutdown();
         }
-        if (barcodeScanner != null) {
-            barcodeScanner.close();
-        }
+        rotatedDataCache = null;
     }
 }
