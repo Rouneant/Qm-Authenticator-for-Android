@@ -32,23 +32,23 @@ jobs:
 
       - name: Decode Keystore File
         run: |
-          echo "${{ secrets.RELEASE_STORE_FILE }}" | base64 -d > release.keystore
-          ls -la release.keystore
-          file release.keystore
+          echo "${{ secrets.RELEASE_STORE_FILE }}" | base64 -d > app/release.keystore
+          ls -la app/release.keystore
+          file app/release.keystore
 
       - name: Build Release APK
         run: |
           chmod +x ./gradlew
           ./gradlew assembleRelease --info
         env:
-          RELEASE_STORE_FILE: release.keystore
+          RELEASE_STORE_FILE: app/release.keystore
           RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
           RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
           RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
 
       - name: Cleanup Keystore
         run: |
-          rm -f release.keystore
+          rm -f app/release.keystore
 
       - name: Create Tag for Manual Trigger
         if: github.event_name == 'workflow_dispatch' && !startsWith(github.ref, 'refs/tags/')
