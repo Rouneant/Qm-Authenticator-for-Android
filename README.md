@@ -43,4 +43,7 @@
   <a href="https://apkpure.com/p/com.qmdeve.authenticator">
     <img src="./img/apkpure-download.png" width="120">
   </a>
+  
+  [<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.png" height="60" alt="Get it at IzzyOnDroid">](https://apt.izzysoft.de/fdroid/index/apk/com.qmdeve.authenticator)
+
 </div>
