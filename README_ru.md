@@ -10,6 +10,8 @@
 [![Telegram](https://img.shields.io/badge/Telegram%20Group-QmDeves-blue.svg?logo=telegram)](https://t.me/QmDeves)
 [![QQ Group](https://img.shields.io/badge/QQ%20Group-1046829337-blue.svg?logo=qq)](https://qm.qq.com/q/OEVn8ZslMq)
 
+[![IzzyOnDroid](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.qmdeve.authenticator&label=IzzyOnDroid)](https://apt.izzysoft.de/fdroid/index/apk/com.qmdeve.authenticator)
+
 **[English](./README.md) | [简体中文](./README_zh.md) | Русский | [日本語](./README_ja.md)**
 
 </div>
@@ -44,6 +46,8 @@
     <img src="./img/apkpure-download.png" width="120">
   </a>
   
-  [<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.png" height="50" alt="Get it at IzzyOnDroid">](https://apt.izzysoft.de/fdroid/index/apk/com.qmdeve.authenticator)
-
+  <a href="https://apt.izzysoft.de/fdroid/index/apk/com.qmdeve.authenticator">
+    <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.png" height="50" alt="Get it at IzzyOnDroid">
+  </a>
+  
 </div>
