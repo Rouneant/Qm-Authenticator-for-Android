@@ -50,7 +50,7 @@
     <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroidButtonGreyBorder_nofont.png" height="50" alt="Get it at IzzyOnDroid">
   </a>
   <a href="https://www.openapk.net/en-US/qm-authenticator-2fa/com.qmdeve.authenticator/">
-    <img src="https://www.openapk.net/images/openapk-badge.png" height="50" alt="Get it at OpenAPK">
+    <img src="https://www.openapk.net/images/openapk-badge.png" height="100" alt="Get it at OpenAPK">
   </a>
   
   
