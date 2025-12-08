@@ -10,7 +10,9 @@
 [![Telegram Group](https://img.shields.io/badge/Telegram%20Group-QmAuthenticator-blue.svg?logo=telegram)](https://t.me/QmDeves)
 [![QQ Group](https://img.shields.io/badge/QQ%20Group-1046829337-blue.svg?logo=qq)](https://qm.qq.com/q/OEVn8ZslMq)
 
-[![IzzyOnDroid](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.qmdeve.authenticator&label=IzzyOnDroid)](https://apt.izzysoft.de/fdroid/index/apk/com.qmdeve.authenticator)
+[![IzzyOnDroid](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.qmdeve.authenticator&label=IzzyOnDroid&style=for-the-badge)](https://apt.izzysoft.de/fdroid/index/apk/com.qmdeve.authenticator)
+[![RB Status](https://shields.rbtlog.dev/simple/com.qmdeve.authenticator?style=for-the-badge)](https://shields.rbtlog.dev/com.qmdeve.authenticator)
+[![IzzyOnDroid Yearly Downloads](https://img.shields.io/badge/dynamic/json?url=https://dlstats.izzyondroid.org/iod-stats-collector/stats/basic/yearly/rolling.json&query=$.['com.qmdeve.authenticator']&label=IzzyOnDroid%20yearly%20downloads)](https://apt.izzysoft.de/packages/com.qmdeve.authenticator)
 
 **English | [简体中文](./README_zh.md) | [Русский](./README_ru.md) | [日本語](./README_ja.md)**
 
