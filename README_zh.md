@@ -10,7 +10,8 @@
 [![Telegram Group](https://img.shields.io/badge/Telegram%20Group-QmAuthenticator-blue.svg?logo=telegram)](https://t.me/QmDeves)
 [![QQ Group](https://img.shields.io/badge/QQ%20Group-1046829337-blue.svg?logo=qq)](https://qm.qq.com/q/OEVn8ZslMq)
 
-[![IzzyOnDroid](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.qmdeve.authenticator&label=IzzyOnDroid)](https://apt.izzysoft.de/fdroid/index/apk/com.qmdeve.authenticator)
+[![IzzyOnDroid](https://img.shields.io/endpoint?url=https://apt.izzysoft.de/fdroid/api/v1/shield/com.qmdeve.authenticator&label=IzzyOnDroid&style=for-the-badge)](https://apt.izzysoft.de/fdroid/index/apk/com.qmdeve.authenticator)
+[![RB Status](https://shields.rbtlog.dev/simple/com.qmdeve.authenticator?style=for-the-badge)](https://shields.rbtlog.dev/com.qmdeve.authenticator)
 
 **[English](./README.md) | 简体中文 | [Русский](./README_ru.md) | [日本語](./README_ja.md)**
 
