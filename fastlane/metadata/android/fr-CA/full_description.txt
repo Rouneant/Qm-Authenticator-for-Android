@@ -1,0 +1,7 @@
+Une application de double authentification (2FA) open source, sûre et hors ligne. Elle vous aide à ajouter une couche de sécurité supplémentaire à vos comptes en ligne.
+
+<b>Fonctionnalités :</b>
+
+- Toutes les clés sont entièrement stockées hors ligne sur l'appareil, elles ne sont jamais téléchargées sur un serveur.
+- Prend en charge l'algorithme de mot de passe à usage unique basé sur le temps (TOTP), compatible avec tous les services utilisant cette norme (comme Google, GitHub, Microsoft, etc.).
+- Conception Material Design 3, offrant une expérience utilisateur intuitive et fluide.

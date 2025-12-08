@@ -1,0 +1,1 @@
+Une application d'authentification à deux facteurs (2FA) open source, sécurisée et hors ligne

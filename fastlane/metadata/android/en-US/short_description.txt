@@ -1,1 +1,1 @@
-An open-source, secure, offline 2FA Application
+An open-source, secure, offline two-factor authentication application
